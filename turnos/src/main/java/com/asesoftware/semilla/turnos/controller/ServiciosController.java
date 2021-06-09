@@ -43,11 +43,20 @@ public class ServiciosController {
 		}catch (Exception e){
 			return null;
 		}
-		
 	}
 	
 	//editar servicio
 	
+	@PostMapping(path = "/actualizar", consumes = "application/json", produces = "application/json")
+	public ServiciosEntity updateServicios(@RequestBody ServiciosEntity serviciosEntity) {
+		try {
+			return serviciosService.updateServicios(serviciosEntity);
+		}catch (Exception e){
+			return null;
+		}
+	}
+	
 	//eliminar servicio
+	
 
 }

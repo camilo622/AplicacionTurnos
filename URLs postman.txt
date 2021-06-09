@@ -28,3 +28,23 @@ Consultar todos: http://localhost:9001/api/v1/servicios/todos
 
 Consultar por id: http://localhost:9001/api/v1/servicios/serviciosId?id=1
 
+Crear: http://localhost:9001/api/v1/servicios/crear
+
+--JSON-> {
+    		"id_comercio": 4,
+  		"nombre":"Creado1", 
+    		"horaApertura":"13:30",
+    		"horaCierre":"15:30",
+    		"duracion":"30"
+	 }
+
+Actualizar: http://localhost:9001/api/v1/servicios/actualizar 
+--JSON-> {
+		"id":3,
+   		"id_comercio": 4,
+    		"nombre":"Creado y actualizado 3", 
+    		"horaApertura":"13:30",
+    		"horaCierre":"15:30",
+    		"duracion":"30"
+	  }
+

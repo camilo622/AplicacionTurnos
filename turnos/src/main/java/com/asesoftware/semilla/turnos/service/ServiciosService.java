@@ -40,8 +40,7 @@ public class ServiciosService implements IServicesService {
 
 	@Override
 	public ServiciosEntity updateServicios(ServiciosEntity serviciosEntity) {
-		// TODO Auto-generated method stub
-		return null;
+		return serviciosRepository.save(serviciosEntity);
 	}
 
 	@Override
