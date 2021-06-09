@@ -26,3 +26,4 @@ public class ComerciosEntity {
 	@Column(name = "aforo")
 	private Integer aforo;
 }
+

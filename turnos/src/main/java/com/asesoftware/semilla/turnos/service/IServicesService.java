@@ -16,5 +16,5 @@ public interface IServicesService {
 		
 	public ServiciosEntity updateServicios(ServiciosEntity serviciosEntity);
 		
-	public void deleteComercios(Integer id);
+	public void deleteServicios(Integer id);
 }
