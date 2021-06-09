@@ -44,8 +44,7 @@ public class ComerciosService implements IComerciosService{
 
 	@Override
 	public void deleteComercios(Integer id) {
-		// TODO Auto-generated method stub
-		
+		comerciosRepository.deleteById(id);		
 	}
 
 }

@@ -70,4 +70,9 @@ public class ComerciosController {
 	
 	//Eliminar Comercio
 	
+	@GetMapping(path = "/borrar/{id}")
+	public void deleteComercios(@PathVariable Integer id) {
+		comerciosservice.deleteComercios(id);
+	}
+	
 }
