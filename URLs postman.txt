@@ -24,3 +24,7 @@ Borrar: http://localhost:9001/api/v1/comercios/borrar/7
 
 SERVICIOS
 
+Consultar todos: http://localhost:9001/api/v1/servicios/todos
+
+
+
