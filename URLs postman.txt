@@ -26,5 +26,5 @@ SERVICIOS
 
 Consultar todos: http://localhost:9001/api/v1/servicios/todos
 
-
+Consultar por id: http://localhost:9001/api/v1/servicios/serviciosId?id=1
 

@@ -1,6 +1,7 @@
 package com.asesoftware.semilla.turnos.service;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -21,8 +22,15 @@ public class ServiciosService implements IServicesService {
 
 	@Override
 	public ServiciosEntity getServiciosById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<ServiciosEntity> optional = serviciosRepository.findById(id);
+		
+		if(optional.isPresent()) {
+			return optional.get();
+		}else {
+			return null;
+		}
+		
 	}
 
 	@Override
