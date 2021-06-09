@@ -1,0 +1,26 @@
+
+COMERCIOS
+
+Consultar todos: http://localhost:9001/api/v1/comercios/todos
+ 
+Consultar por id: http://localhost:9001/api/v1/comercios/comercioid?id=1
+
+Crear: http://localhost:9001/api/v1/comercios/crear
+
+--JSON-> {
+    		"aforo": 88
+	 }
+
+Actualizar: http://localhost:9001/api/v1/comercios/editar
+
+--JSON-> {
+		"id": 9,
+    		"aforo": 999
+	 }
+
+Borrar: http://localhost:9001/api/v1/comercios/borrar/7
+
+--------------------------------------------------------------------------------------------
+
+SERVICIOS
+
