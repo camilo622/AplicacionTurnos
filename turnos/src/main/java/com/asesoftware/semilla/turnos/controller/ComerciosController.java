@@ -57,10 +57,16 @@ public class ComerciosController {
 		}
 	}
 	
-	
-	
-	
 	//Editar Comercio
+	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")//Path para verbo http que pasa parametros desde el body
+	public ComerciosEntity updateComercios(@RequestBody ComerciosEntity comerciosEntity) {			
+		//si durante la ejecución en el body se le pasa un dato incorrecto, no se guardara sino que retornará el null para mostrar que está mal. 
+		try {
+			return comerciosservice.updateComercios(comerciosEntity);
+		}catch(Exception e) {
+			return null;
+		}
+	}
 	
 	//Eliminar Comercio
 	

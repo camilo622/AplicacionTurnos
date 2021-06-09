@@ -39,8 +39,7 @@ public class ComerciosService implements IComerciosService{
 
 	@Override
 	public ComerciosEntity updateComercios(ComerciosEntity comerciosEntity) {
-		// TODO Auto-generated method stub
-		return null;
+		return comerciosRepository.save(comerciosEntity);
 	}
 
 	@Override
