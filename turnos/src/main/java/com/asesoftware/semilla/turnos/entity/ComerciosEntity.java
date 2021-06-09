@@ -2,6 +2,8 @@ package com.asesoftware.semilla.turnos.entity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -17,6 +19,7 @@ public class ComerciosEntity {
 	//Generación de los atributos de la tabla Comercios
 	
 	@Id //Anotación para mostrar el identificador de la tabla
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "id") //Anotación que coloca explicitamente el nombre de la columna que se va usar
 	private Integer id;
 	
