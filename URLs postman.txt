@@ -48,3 +48,5 @@ Actualizar: http://localhost:9001/api/v1/servicios/actualizar
     		"duracion":"30"
 	  }
 
+Borrar: http://localhost:9001/api/v1/servicios/borrar/10
+
