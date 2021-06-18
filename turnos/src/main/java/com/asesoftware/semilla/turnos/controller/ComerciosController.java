@@ -25,7 +25,7 @@ public class ComerciosController {
 	//Consultar todos
 	
 	@GetMapping(path = "/todos")//anotación del verbo http get.
-	public List<ComerciosEntity> getAll(){
+	public ResponseDTO getAll(){
 		return comerciosservice.getAll();
 	}
 	
