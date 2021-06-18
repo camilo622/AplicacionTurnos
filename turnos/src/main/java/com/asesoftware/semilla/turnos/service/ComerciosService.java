@@ -50,6 +50,8 @@ public class ComerciosService implements IComerciosService{
 			
 			comerciosRepository.save(comerciosEntity);
 			
+			// comerciosEntity.setId(null); //Por si no se quiere mostrar esa propiedad cuando se devuelva la información
+			
 			return new ResponseDTO(mapperComercios.entityToDTO(comerciosEntity), true, "comercio Creado", HttpStatus.OK);
 			
 		}catch(Exception e) {

@@ -1,9 +1,5 @@
 package com.asesoftware.semilla.turnos.dto;
 
-import java.util.List;
-
-import com.asesoftware.semilla.turnos.entity.ServiciosEntity;
-
 import lombok.Data;
 
 @Data

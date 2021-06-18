@@ -1,20 +1,17 @@
 package com.asesoftware.semilla.turnos.service;
 
-import java.util.List;
-
-import com.asesoftware.semilla.turnos.entity.ServiciosEntity;
-
-
+import com.asesoftware.semilla.turnos.dto.ResponseDTO;
+import com.asesoftware.semilla.turnos.dto.ServiciosDTO;
 
 public interface IServicesService {
 
-	public List<ServiciosEntity> getAll(); 
+	public ResponseDTO getAll(); 
 	
-	public ServiciosEntity getServiciosById(Integer id);
+	public ResponseDTO getServiciosById(Integer id);
 		
-	public ServiciosEntity createServicios(ServiciosEntity serviciosEntity); 
+	public ResponseDTO createServicios(ServiciosDTO serviciosDTO); 
 		
-	public ServiciosEntity updateServicios(ServiciosEntity serviciosEntity);
+	public ResponseDTO updateServicios(ServiciosDTO serviciosDTO);
 		
-	public void deleteServicios(Integer id);
+	public ResponseDTO deleteServicios(Integer id);
 }

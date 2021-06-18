@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.asesoftware.semilla.turnos.dto.ComerciosDTO;
 import com.asesoftware.semilla.turnos.dto.ResponseDTO;
-import com.asesoftware.semilla.turnos.entity.ComerciosEntity;
 
 public interface IComerciosService {
 	

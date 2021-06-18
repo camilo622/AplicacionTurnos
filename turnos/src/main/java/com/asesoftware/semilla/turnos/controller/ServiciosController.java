@@ -1,7 +1,5 @@
 package com.asesoftware.semilla.turnos.controller;
 
-import java.util.List;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -11,7 +9,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.asesoftware.semilla.turnos.entity.ServiciosEntity;
+import com.asesoftware.semilla.turnos.dto.ResponseDTO;
+import com.asesoftware.semilla.turnos.dto.ServiciosDTO;
 import com.asesoftware.semilla.turnos.service.IServicesService;
 
 @RestController
@@ -24,24 +23,25 @@ public class ServiciosController {
 	//consultar todos
 	
 	@GetMapping(path = "/todos")
-	public List<ServiciosEntity> getAll(){
+	public ResponseDTO getAll(){
 		return serviciosService.getAll();
 	}
 	
 	//consultar por id
 	
 	@GetMapping(path = "/serviciosId")
-	public ServiciosEntity getServiciosParametroById(@RequestParam Integer id) {
+	public ResponseDTO getServiciosParametroById(@RequestParam Integer id) {
 		return serviciosService.getServiciosById(id);
 	}
 	
 	//crear servicio
 	
 	@PostMapping(path = "/crear", consumes = "application/json", produces = "application/json")
-	public ServiciosEntity createServicios(@RequestBody ServiciosEntity serviciosEntity) {
+	public ResponseDTO createServicios(@RequestBody ServiciosDTO serviciosDTO) {
+		//si durante la ejecución en el body se le pasa un dato incorrecto, no se guardara sino que retornará el null para mostrar que está mal.
 		try {
-			return serviciosService.createServicios(serviciosEntity);
-		}catch (Exception e){
+			return serviciosService.createServicios(serviciosDTO);
+		}catch(Exception e) {
 			return null;
 		}
 	}
@@ -49,9 +49,10 @@ public class ServiciosController {
 	//editar servicio
 	
 	@PostMapping(path = "/actualizar", consumes = "application/json", produces = "application/json")
-	public ServiciosEntity updateServicios(@RequestBody ServiciosEntity serviciosEntity) {
+	public ResponseDTO updateServicios(@RequestBody ServiciosDTO serviciosDTO) {
+		//si durante la ejecución en el body se le pasa un dato incorrecto, no se guardara sino que retornará el null para mostrar que está mal. 
 		try {
-			return serviciosService.updateServicios(serviciosEntity);
+			return serviciosService.updateServicios(serviciosDTO);
 		}catch (Exception e){
 			return null;
 		}
@@ -60,8 +61,8 @@ public class ServiciosController {
 	//eliminar servicio
 	
 	@GetMapping(path = "/borrar/{id}")
-	public void deleteServicios(@PathVariable Integer id) {
-		serviciosService.deleteServicios(id);
+	public ResponseDTO deleteServicios(@PathVariable Integer id) {
+		return serviciosService.deleteServicios(id);
 	}
 	
 
