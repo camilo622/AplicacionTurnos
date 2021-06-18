@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.asesoftware.semilla.turnos.dto.ComerciosDTO;
+import com.asesoftware.semilla.turnos.dto.ResponseDTO;
 import com.asesoftware.semilla.turnos.entity.ComerciosEntity;
 import com.asesoftware.semilla.turnos.service.IComerciosService;
 
@@ -40,7 +42,7 @@ public class ComerciosController {
 	
 	//Mismo método pero a través de un parametro
 	@GetMapping(path = "/comercioid")
-	public ComerciosEntity getComerciosParametroById(@RequestParam Integer id) {
+	public ResponseDTO getComerciosParametroById(@RequestParam Integer id) {
 		
 		return comerciosservice.getComerciosById(id);
 	}
@@ -48,10 +50,10 @@ public class ComerciosController {
 	//Crear Comercio
 	
 	@PostMapping(path = "/crear", consumes = "application/json", produces = "application/json")//Path para verbo http que pasa parametros desde el body
-	public ComerciosEntity createComercios(@RequestBody ComerciosEntity comerciosEntity) {			
+	public ResponseDTO createComercios(@RequestBody ComerciosDTO comerciosDTO) {			
 		//si durante la ejecución en el body se le pasa un dato incorrecto, no se guardara sino que retornará el null para mostrar que está mal. 
 		try {
-			return comerciosservice.createComercios(comerciosEntity);
+			return comerciosservice.createComercios(comerciosDTO);
 		}catch(Exception e) {
 			return null;
 		}
@@ -59,10 +61,10 @@ public class ComerciosController {
 	
 	//Editar Comercio
 	@PostMapping(path = "/editar", consumes = "application/json", produces = "application/json")//Path para verbo http que pasa parametros desde el body
-	public ComerciosEntity updateComercios(@RequestBody ComerciosEntity comerciosEntity) {			
+	public ResponseDTO updateComercios(@RequestBody ComerciosDTO comerciosDTO) {			
 		//si durante la ejecución en el body se le pasa un dato incorrecto, no se guardara sino que retornará el null para mostrar que está mal. 
 		try {
-			return comerciosservice.updateComercios(comerciosEntity);
+			return comerciosservice.updateComercios(comerciosDTO);
 		}catch(Exception e) {
 			return null;
 		}
@@ -71,8 +73,8 @@ public class ComerciosController {
 	//Eliminar Comercio
 	
 	@GetMapping(path = "/borrar/{id}")
-	public void deleteComercios(@PathVariable Integer id) {
-		comerciosservice.deleteComercios(id);
+	public ResponseDTO deleteComercios(@PathVariable Integer id) {
+		return comerciosservice.deleteComercios(id);
 	}
 	
 }
