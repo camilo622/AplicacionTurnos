@@ -8,7 +8,8 @@ Consultar por id: http://localhost:9001/api/v1/comercios/comercioid?id=1
 Crear: http://localhost:9001/api/v1/comercios/crear
 
 --JSON-> {
-    		"aforo": 88
+    		"aforo": 88,
+		"nombre": "comercio7"
 	 }
 
 Actualizar: http://localhost:9001/api/v1/comercios/editar
@@ -16,6 +17,7 @@ Actualizar: http://localhost:9001/api/v1/comercios/editar
 --JSON-> {
 		"id": 9,
     		"aforo": 999
+		"nombre": "comercio7"
 	 }
 
 Borrar: http://localhost:9001/api/v1/comercios/borrar/7
