@@ -8,7 +8,7 @@ import com.asesoftware.semilla.turnos.entity.ComerciosEntity;
 
 public interface IComerciosService {
 	
-	public List<ComerciosEntity> getAll(); 
+	public ResponseDTO getAll(); 
 		
 	public ResponseDTO getComerciosById(Integer id);
 		

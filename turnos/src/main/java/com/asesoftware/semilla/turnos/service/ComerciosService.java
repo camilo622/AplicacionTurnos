@@ -23,8 +23,10 @@ public class ComerciosService implements IComerciosService{
 	private IComerciosMapper mapperComercios; 
 	
 	@Override
-	public List<ComerciosEntity> getAll() {
-		return comerciosRepository.findAll();
+	public ResponseDTO getAll() {
+		
+		return new ResponseDTO(mapperComercios.listEntityToDto(comerciosRepository.findAll()), true, "ok", HttpStatus.OK);
+		
 	}
 
 	@Override
